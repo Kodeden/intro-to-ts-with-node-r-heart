@@ -1,3 +1,3 @@
-export function add2Nums(a: number, b: number): number {
-  return a + b;
+export function greet(personName: string): string {
+  return "Hello, " + personName;
 }
