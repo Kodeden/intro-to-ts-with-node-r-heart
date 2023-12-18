@@ -2,8 +2,8 @@ import { expect, test } from "vitest";
 import { greet } from "./index.js";
 
 test("greet function returns the correct greeting", () => {
-  const personName = "Amy";
-  const expectedGreeting = "Hello, Amy";
-  const result = greet(personName);
+  const user1 = { firstName: "Amy", lastName: "Jones" };
+  const expectedGreeting = "Hello, Amy Jones";
+  const result = greet(user1);
   expect(result).toBe(expectedGreeting);
 });
