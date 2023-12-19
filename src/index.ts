@@ -42,7 +42,7 @@ export function greet(studentPerson: StudentPerson): string {
   return `Hello, ${studentPerson.firstName} ${studentPerson.lastName} of ${studentPerson.university}'s class of ${studentPerson.graduationYear}!`;
 }
 
-const studentUser: StudentPerson = {
+const student: StudentPerson = {
   id: 15,
   firstName: "Joan",
   lastName: "Doe",
@@ -59,7 +59,7 @@ const studentUser: StudentPerson = {
   graduationYear: "2024",
 };
 
-console.log(greet(studentUser));
+console.log(greet(student));
 
 // commented out because it is part of Intersection Types lesson but not the challenge:
 // const employee: EmployeePerson = {
