@@ -31,6 +31,7 @@ const me: Person = {
     city: "Springfield",
     state: "IL",
     zip: 62701,
+    addressType: "Home",
   },
 };
 
