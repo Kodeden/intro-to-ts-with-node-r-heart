@@ -16,34 +16,67 @@ export interface Person {
   address: Address;
   hobbies?: string[];
 }
+// commented out because it is part of Intersection Types lesson but not the challenge:
+// export interface Employee {
+//   company: string;
+//   jobTitle: string;
+//   salary: number;
+// }
 
-export interface Employee {
-  company: string;
-  jobTitle: string;
-  salary: number;
+// commented out because it is part of Intersection Types lesson but not the challenge:
+// type EmployeePerson = Person & Employee;
+
+// Intersection Types Challenge: create a new interface called `Student` that has the following properties: university - string, major - string, graduationYear - string:
+
+export interface Student {
+  university: string;
+  major: string;
+  graduationYear: string;
 }
 
-type EmployeePerson = Person & Employee;
+// Intersection Types Challenge, continued: create a new type called `StudentPerson` that is an intersection of `Person` and `Student`:
+export type StudentPerson = Person & Student;
 
-export function greet(person: Person): string {
-  return `Hello, ${person.firstName} ${person.lastName}!`;
+// Intersection Types Challenge, continued: create a new student object that is of type StudentPerson and pass it to the greet function:
+export function greet(studentPerson: StudentPerson): string {
+  return `Hello, ${studentPerson.firstName} ${studentPerson.lastName} of ${studentPerson.university}'s class of ${studentPerson.graduationYear}!`;
 }
 
-const employee: EmployeePerson = {
-  id: 2,
-  firstName: "Alice",
-  lastName: "Smith",
-  age: 28,
+const studentUser: StudentPerson = {
+  id: 15,
+  firstName: "Joan",
+  lastName: "Doe",
+  age: 21,
   address: {
-    street: "456 Main St",
+    street: "123 Main St",
     city: "Metropolis",
     state: "NY",
     zip: 10001,
-    addressType: "Home",
+    addressType: "Other",
   },
-  company: "Globex Corporation",
-  jobTitle: "Software Developer",
-  salary: 100000,
+  university: "Harvard",
+  major: "Computer Science",
+  graduationYear: "2024",
 };
 
-console.log(greet(employee)); // Works as employee is a Person
+console.log(greet(studentUser));
+
+// commented out because it is part of Intersection Types lesson but not the challenge:
+// const employee: EmployeePerson = {
+//   id: 2,
+//   firstName: "Alice",
+//   lastName: "Smith",
+//   age: 28,
+//   address: {
+//     street: "456 Main St",
+//     city: "Metropolis",
+//     state: "NY",
+//     zip: 10001,
+//     addressType: "Home",
+//   },
+//   company: "Globex Corporation",
+//   jobTitle: "Software Developer",
+//   salary: 100000,
+// };
+
+// console.log(greet(employee)); // Works as employee is a Person
