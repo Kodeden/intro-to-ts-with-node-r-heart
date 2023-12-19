@@ -1,10 +1,17 @@
-// Define the Car interface with properties of make as a string, model as a string, year as a number, color as a string, and isElectric as boolean:
+// Define the Car interface with properties of make as a string, model as a string, year as a number, color as a string, and isElectric as boolean. Add some optional properties as well:
 export interface Car {
+  readonly VIN: string;
   make: string;
   model: string;
   year: number;
   color: string;
   isElectric: boolean;
+  drivetrain: string;
+  bodyType: string;
+  seatingMaterial?: string;
+  hasSunroof?: boolean;
+  safetyFeatures?: string[];
+  otherFeatures?: string[];
 }
 
 // write a function called describeCar that takes a `Car` as a parameter and returns a string describing the car:
