@@ -1,4 +1,8 @@
-// Define the Car interface with properties of make as a string, model as a string, year as a number, color as a string, and isElectric as boolean. Add some optional properties as well:
+import { type Person } from "./index.js";
+
+// Challenge-Car: Define the Car interface with properties of make as a string, model as a string, year as a number, color as a string, and isElectric as boolean.
+// Optional Properties Challenge: Add some optional properties as well.
+// Nested Interfaces Challenge: For nested interfaces challenge, import the Person interface and use it to add an owner property to the Car interface:
 export interface Car {
   readonly VIN: string;
   make: string;
@@ -12,6 +16,7 @@ export interface Car {
   hasSunroof?: boolean;
   safetyFeatures?: string[];
   otherFeatures?: string[];
+  owner: Person;
 }
 
 // write a function called describeCar that takes a `Car` as a parameter and returns a string describing the car:
