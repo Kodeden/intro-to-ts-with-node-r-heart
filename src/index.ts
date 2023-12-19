@@ -1,8 +1,11 @@
+type AddressType = "Home" | "Work" | "Other";
+
 interface Address {
   street: string;
   city: string;
   state: string;
   zip: number;
+  addressType: AddressType; // New property using union type
 }
 
 export interface Person {
