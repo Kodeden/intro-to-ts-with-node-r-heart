@@ -17,22 +17,33 @@ export interface Person {
   hobbies?: string[];
 }
 
+export interface Employee {
+  company: string;
+  jobTitle: string;
+  salary: number;
+}
+
+type EmployeePerson = Person & Employee;
+
 export function greet(person: Person): string {
   return `Hello, ${person.firstName} ${person.lastName}!`;
 }
 
-const me: Person = {
-  id: 1,
-  firstName: "John",
-  lastName: "Doe",
-  age: 42,
+const employee: EmployeePerson = {
+  id: 2,
+  firstName: "Alice",
+  lastName: "Smith",
+  age: 28,
   address: {
-    street: "123 Fake St",
-    city: "Springfield",
-    state: "IL",
-    zip: 62701,
+    street: "456 Main St",
+    city: "Metropolis",
+    state: "NY",
+    zip: 10001,
     addressType: "Home",
   },
+  company: "Globex Corporation",
+  jobTitle: "Software Developer",
+  salary: 100000,
 };
 
-console.log(greet(me));
+console.log(greet(employee)); // Works as employee is a Person
